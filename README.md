@@ -1,6 +1,22 @@
-# Getting Started with Create React App
+# Basic react app to test reformatting text that was read out of an image using tesseract.js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The goal of this project is to generarte an html or pdf document with similar formatting to the image document: text placement and text size ratios.
+
+## The idea
+
+Since using tesseract.js has the advantage of a huge support of different languages and, (after loading the model) fairly fast recognition speeds, it was the first choice to use for analyzing scans and images of pure text documents like contracts.
+
+Tesseract.js creates a results object that *does* include the position of each text block, line, word, down to the character. But using those coordinates often resulted in a document that does not look all too clean but rather a bit crooked.
+
+So to solve this and create a clean, formatted and styled document I used the resulting coordinates and strings to find out the size of each line, their distance to one another and completely recreated the document using html text elements (also removing incomplete lines or falsely interpreted blemishes of the original document).  
+
+
+## Including
+
+The re-formatting of the strings captured using the tesseract OCR engine works fine. 
+The latest addition to this project was the incorporation of a pdf library to read out text if present in a pdf. Additionally it should potentially create a PDF off any reformatted text.
+
+This project also includes a small approach to test the 'smart-reply' tfLite model. This was just out of convenience since i found it interesting to play around with and already set up a small frontend. But it is not working nor implemented in the ui rn.
 
 ## Available Scripts
 
@@ -38,33 +54,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
