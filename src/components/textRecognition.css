@@ -1,0 +1,35 @@
+#wrapperBox {
+  margin: 20px;
+  padding: 30px;
+  background-color: greenyellow;
+  border-radius: 20px;
+  text-align: left;
+}
+
+#imageWrapper {
+  margin: 20px calc(10vw - 50px);
+  height: 70vh;
+  width: 80vw;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: white;
+}
+
+#imgInput{
+    display: none;
+}
+
+#uploadImage {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+#resultWrapper {
+  margin: 0 calc( 10vw - 50px);
+  padding: 50px;
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+}
